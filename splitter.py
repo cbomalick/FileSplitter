@@ -6,6 +6,7 @@
 import csv
 import os 
 
+#Counters
 file_number = 1
 row_count = 0
 total_rows = 0
