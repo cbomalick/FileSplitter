@@ -6,17 +6,17 @@
 import csv
 import os 
 
-#Counters
-file_number = 1
-row_count = 0
-total_rows = 0
-total_files = 0
-
 #Input file
 master = "master.csv"
 
 #Maximum length
 max_length = 999
+
+#Counters
+file_number = 1
+row_count = 0
+total_rows = 0
+total_files = 0
 
 #Pull current file path
 folder = os.path.dirname(os.path.realpath(__file__)) + "/"
