@@ -6,17 +6,16 @@
 import csv
 import os 
 
+file_number = 1
+row_count = 0
+total_rows = 0
+total_files = 0
+
 #Input file
 master = "master.csv"
 
 #Maximum length
 max_length = 999
-
-#Counters
-file_number = 1
-row_count = 0
-total_rows = 0
-total_files = 0
 
 #Pull current file path
 folder = os.path.dirname(os.path.realpath(__file__)) + "/"
@@ -27,7 +26,7 @@ newfile = folder + filename +".csv"
 
 #Open and read the master file
 with open(folder + master) as master_file:
-    csv_reader = csv.reader(master_file, delimiter=',')
+    csv_reader = csv.reader(master_file, delimiter=",")
 
     #Create and open the new file
     f = open(newfile, "a")
@@ -37,13 +36,13 @@ with open(folder + master) as master_file:
     headers = next(csv_reader)
 
     #Write the headers into the first file
-    f.write(','.join(headers))
+    f.write(",".join(headers))
     f.write("\n")
     row_count += 1
     
     for row in csv_reader:
         #Write the data into the file
-        f.write(','.join(row) + "\n")
+        f.write(",".join(row) + "\n")
         row_count += 1
         total_rows += 1
         
@@ -60,7 +59,7 @@ with open(folder + master) as master_file:
 
             #Create and open the new file
             f = open(newfile, "a")
-            f.write(','.join(headers) + "\n")
+            f.write(",".join(headers) + "\n")
             row_count += 1
             total_files += 1
     
